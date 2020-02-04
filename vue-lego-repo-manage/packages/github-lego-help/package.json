@@ -1,0 +1,9 @@
+{
+  "name": "github-lego-helper",
+  "version": "0.0.1",
+  "description": "github-lego-helper",
+  "main": "index.js",
+  "repository": "https://github.com/xxholly32/vue-lego.git",
+  "author": "xiangxiao",
+  "license": "MIT"
+}

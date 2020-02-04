@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       form: {
-        name: 'vue-lego-client',
-        site: 'https://github.com/xxholly32/vue-lego-client.git',
+        name: 'vue-manage-system',
+        site: 'https://github.com/xxholly32/vue-manage-system.git',
       },
     };
   },
