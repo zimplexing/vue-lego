@@ -9,7 +9,7 @@ cd vue-lego-client
 
 yarn install
 
-yarn spa-serve
+yarn serve
 ```
 
 ## 简单编辑器启动
