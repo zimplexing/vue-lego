@@ -38,4 +38,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  margin-top: 20px;
+}
+</style>

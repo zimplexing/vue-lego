@@ -1,7 +1,14 @@
 <template>
   <div class="header">
-    <div class="logo">vue-lego-client</div>
-    <el-menu :default-active="activeIndex" @select="handleSelect" mode="horizontal">
+    <!-- <div class="logo">vue-lego-client</div> -->
+    <el-menu
+      :default-active="activeIndex"
+      @select="handleSelect"
+      mode="horizontal"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+    >
       <el-menu-item index="1">项目管理</el-menu-item>
       <el-menu-item index="2">appVueHash</el-menu-item>
       <el-menu-item index="3">appVueHistory</el-menu-item>
@@ -39,7 +46,6 @@ export default {
   box-sizing: border-box;
   background-color: #242f42;
   width: 100%;
-  height: 70px;
   font-size: 22px;
   color: #fff;
 }

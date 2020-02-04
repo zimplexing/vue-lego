@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Base64 } from 'js-base64';
 const REPO_URL = 'https://api.github.com/repos/';
 
 const findInfoByGitUrl = function(gitUrl) {
@@ -47,6 +48,7 @@ const getDepNodes = async function(url, pnode) {
     let temp = {
       label: node.path,
       sha: node.sha,
+      url: node.url,
     };
     if (node.type === 'tree') {
       temp.children = await getDepNodes(url, node);
@@ -74,4 +76,16 @@ const getRepoNodesByPath = async function(url, sha = 'master', path) {
   }
 };
 
-export { getRepo, getRepoNodesByPath };
+const getFile = async function(url) {
+  try {
+    let {
+      data: { content },
+    } = await axios.get(url);
+    return Base64.decode(content);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
+};
+
+export { getRepo, getRepoNodesByPath, getFile };
