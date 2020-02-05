@@ -39,11 +39,11 @@ const getNodeByPath = async function(url, sha = 'master', path) {
   return node;
 };
 
-const getDepNodes = async function(url, pnode) {
+const getDepNodes = async function(url, pNode) {
   let arr = [];
   let {
     data: { tree: nodes },
-  } = await axios.get(url + '/git/trees/' + pnode.sha);
+  } = await axios.get(url + '/git/trees/' + pNode.sha);
   for (let node of nodes) {
     let temp = {
       label: node.path,

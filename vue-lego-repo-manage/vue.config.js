@@ -8,15 +8,15 @@ const config = {
   filenameHashing: false, //去掉文件名的hash值
 };
 
-const enteyFile = env === 'singleSpa' ? './src/index.spa.js' : './src/index.js';
+const entryFile = env === 'singleSpa' ? './src/index.spa.js' : './src/index.js';
 //正常打包的app.js在js目录下，而single-spa模式则需要在根目录下。
 //打包时会从dist-spa/js目录将app.js拷贝到正常打包的根目录下，所以不用管，只需要判断single-spa的开发模式即可
 const filename = modeEnv === 'development' ? '[name].js' : 'js/[name].js';
 
-chainWebpack = config => {
+const chainWebpack = config => {
   config
     .entry('app')
-    .add(enteyFile)
+    .add(entryFile)
     .end()
     .output.filename(filename);
   if (env === 'singleSpa') {

@@ -10,7 +10,7 @@
         ></el-tree>
       </el-col>
       <el-col :span="16">
-        <pre v-highlightjs="contant"><code class="vue"></code></pre>
+        <pre v-highlightjs="content"><code class="vue"></code></pre>
       </el-col>
     </el-row>
   </div>
@@ -25,7 +25,7 @@ export default {
       repo: {},
       treeData: [],
       loading: true,
-      contant: '',
+      content: '',
       defaultProps: {
         children: 'children',
         label: 'label',
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     async handleNodeClick(data) {
-      this.contant = await connect.getFile(data.url);
+      this.content = await connect.getFile(data.url);
     },
   },
 };
